@@ -1,16 +1,36 @@
-function handleSubmit(event) {
+const handleSubmit = (event) => {
     event.preventDefault()
 
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    checkForName(formText)
+    const formText = document.getElementById('name').value
+    
+    const data = {
+        url: formText
+    }
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
+    fetch('http://localhost:8080/analyze', {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    })
+    .then(result => result.json())
+    .then(jsonResult => {
+        document.getElementById('results').innerHTML =
+        `<div>
+            <span>polarity: ${jsonResult.polarity} (${probabilityToPercentage(jsonResult.polarity_confidence)})</span><br>
+            <span>subjectivity: ${jsonResult.subjectivity} (${probabilityToPercentage(jsonResult.subjectivity_confidence)})</span>
+        </div>`
     })
 }
 
-export { handleSubmit }
+const probabilityToPercentage = (probability) => {
+    return `${(probability * 100).toFixed(2)}%`
+}
+
+export { handleSubmit, probabilityToPercentage }
