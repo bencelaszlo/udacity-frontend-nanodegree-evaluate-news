@@ -1,14 +1,29 @@
 body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
-    flex: 2;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    flex: 1;
 }
 
-section {
-    max-width: 800px;
-    margin: 50px auto;
+#result {
+    display: none;
+    border: 1px dashed #75ccb9;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        background-color: #75ccb9;
+        color: white;
+    }
+
+    span {
+        margin-bottom: 1rem;
+    }
 }

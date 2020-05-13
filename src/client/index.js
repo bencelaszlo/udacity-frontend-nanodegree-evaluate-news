@@ -4,10 +4,11 @@ import './styles/form.scss'
 import './styles/header.scss'
 import './styles/resets.scss'
 
-import { validateUrl } from './js/urlValidator'
+import { validateUrl, validateInput } from './js/urlValidator'
 import { handleSubmit } from './js/formHandler'
 
 export {
     validateUrl,
+    validateInput,
     handleSubmit
 }

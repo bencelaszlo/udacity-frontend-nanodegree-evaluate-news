@@ -9,23 +9,26 @@
 <body>
 
     <header>
-        <div class="">
+        <div id="title">
             <h1>Evaluate News</h1>
+            <span>Positive? Negative? Objective? Subjective? You should not wait to determine that anymore!</span>
         </div>
     </header>
 
     <main>
         <section>
             <form class="" onsubmit="return Client.handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" placeholder="Name" required>
-                <input type="submit" name="" value="submit">
+                <input id="input-url" type="text" name="input" value="" placeholder="https://example.com" required
+                    oninput="Client.validateInput(event)">
+                <span id="invalid-input-value"></span>
+                <input id="submit-button" type="submit" name="submit-button" value="Submit">
             </form>
-            <section>
+        </section>
 
-                <section>
-                    <strong>Results:</strong>
-                    <div id="results"></div>
-                </section>
+        <section id="result">
+            <h2>Results</h2>
+            <div id="results"></div>
+        </section>
     </main>
 
     <footer>

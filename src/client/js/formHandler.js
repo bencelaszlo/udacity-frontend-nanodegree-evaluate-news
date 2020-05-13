@@ -1,10 +1,10 @@
 const handleSubmit = (event) => {
     event.preventDefault()
 
-    const formText = document.getElementById('name').value
+    const formInput = document.getElementById('input-url').value
 
     const data = {
-        url: formText
+        url: formInput
     }
 
     fetch('http://localhost:8080/analyze', {
@@ -23,9 +23,10 @@ const handleSubmit = (event) => {
         .then(jsonResult => {
             document.getElementById('results').innerHTML =
                 `<div>
-            <span>polarity: ${jsonResult.polarity} (${probabilityToPercentage(jsonResult.polarity_confidence)})</span><br>
-            <span>subjectivity: ${jsonResult.subjectivity} (${probabilityToPercentage(jsonResult.subjectivity_confidence)})</span>
+            <span>- polarity: ${jsonResult.polarity} (${probabilityToPercentage(jsonResult.polarity_confidence)})</span><br>
+            <span>- subjectivity: ${jsonResult.subjectivity} (${probabilityToPercentage(jsonResult.subjectivity_confidence)})</span>
         </div>`
+            document.getElementById('result').style.display = 'block'
         })
 }
 

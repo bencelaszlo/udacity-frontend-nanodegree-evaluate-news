@@ -1,5 +1,23 @@
 header {
+    width: 100%;
+    min-height: 15rem;
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+    background-color: #a7ffeb;
+}
+
+#title {
+    margin-top: 7rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-bottom: 2rem;
+    background-color: #75ccb9;
+    color: white;
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }

@@ -41,8 +41,8 @@ app.post('/analyze/', async (req, res) => {
         if (error) {
             console.error(JSON.stringify(error))
             res.status(500).send()
+        } else {
+            res.status(200).send(result)
         }
-
-        res.status(200).send(result)
     })
 })

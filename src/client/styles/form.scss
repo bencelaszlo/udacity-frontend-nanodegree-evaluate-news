@@ -1,12 +1,33 @@
 form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+    width: 60vw;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-radius: 5%;
+    border: 3px dashed #dbffff;
+    text-align: center;
 }
 
 input {
-    padding: 5px 20px;
     width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+    margin-bottom: 2rem;
+    border: 1px solid #dbffff;
+    text-align: center;
+}
+
+#invalid-input-value {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: red;
+}
+
+#submit-button {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1px dashed #75ccb9;
+
+    &:hover {
+        border: 1px solid #a7ffeb;
+        background-color: mix(#a7ffeb, white, 30);
+    }
 }
